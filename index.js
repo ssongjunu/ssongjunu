@@ -55,11 +55,17 @@ const parser = new Parser({
 
     // 최신 10개의 글의 제목과 링크를 가져온 후 text에 추가
     for (let i = 0; i < 10; i++) {
-        const {title, link} = feed.items[i];
+        const { title, link, category, pubDate } = feed.items[i];
+        
         console.log(`${i + 1}번째 게시물`);
         console.log(`추가될 제목: ${title}`);
         console.log(`추가될 링크: ${link}`);
-        text += `<li><a href='${link}' target='_blank'>${title}</a></li>`;
+        // 날짜 포맷을 yyyy/mm/dd 로 변환
+        const date = new Date(pubDate);
+        const formattedDate = `${date.getFullYear()}/${('0' + (date.getMonth() + 1)).slice(-2)}/${('0' + date.getDate()).slice(-2)}`;
+
+        // 링크 제목에 [category] yyyy/mm/dd - 제목 형식으로 추가
+        text += `<li><a href='${link}' target='_blank'>${formattedDate} - [${category[0]}] ${title}</a></li>`;
     }
 
     text += `</ul></div>`;
