@@ -51,7 +51,7 @@ const parser = new Parser({
     // 피드 목록
     const feed = await parser.parseURL('https://bigdwarf.blog/rss'); // 본인의 블로그 주소
 
-    text += `<p align="center"><ul>`;
+    text += `<div style="display: flex; justify-content: center;"><ul style="list-style: none; padding: 0; text-align: left;">`;
 
     // 최신 10개의 글의 제목과 링크를 가져온 후 text에 추가
     for (let i = 0; i < 10; i++) {
@@ -62,7 +62,7 @@ const parser = new Parser({
         text += `<li><a href='${link}' target='_blank'>${title}</a></li>`;
     }
 
-    text += `</ul></p>`;
+    text += `</ul></div>`;
 
     // README.md 파일 생성
     writeFileSync('README.md', text, 'utf8', (e) => {
