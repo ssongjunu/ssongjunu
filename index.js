@@ -51,7 +51,7 @@ const parser = new Parser({
     // 피드 목록
     const feed = await parser.parseURL('https://bigdwarf.blog/rss'); // 본인의 블로그 주소
 
-    text += `<table align="center">`;
+    text += `<table align="center" style="border-collapse: collapse; border: none;">`;
 
     // 최신 10개의 글의 제목과 링크를 가져온 후 text에 추가
     for (let i = 0; i < 10; i++) {
@@ -65,7 +65,7 @@ const parser = new Parser({
         const formattedDate = `${date.getFullYear()}/${('0' + (date.getMonth() + 1)).slice(-2)}/${('0' + date.getDate()).slice(-2)}`;
 
         // 링크 제목에 yyyy-mm-dd - [category] - 제목 형식으로 추가
-        text += `<tr><td align="left"><a href='${link}' target='_blank'>${formattedDate} - ${title}</a></td></tr>`;
+        text += `<tr style="border: none;"><td align="left" style="border: none;"><a href='${link}' target='_blank'>${formattedDate} - ${title}</a></td></tr>`;
     }
 
     text += `</table>`;
