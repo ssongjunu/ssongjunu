@@ -60,12 +60,12 @@ const parser = new Parser({
         console.log(`${i + 1}번째 게시물`);
         console.log(`추가될 제목: ${title}`);
         console.log(`추가될 링크: ${link}`);
-        // 날짜 포맷을 yyyy/mm/dd 로 변환
+        // 날짜 포맷을 yyyy-mm-dd 로 변환
         const date = new Date(pubDate);
-        const formattedDate = `${date.getFullYear()}/${('0' + (date.getMonth() + 1)).slice(-2)}/${('0' + date.getDate()).slice(-2)}`;
+        const formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`;
 
-        // 링크 제목에 [category] yyyy/mm/dd - 제목 형식으로 추가
-        text += `<li><a href='${link}' target='_blank'>${formattedDate} - [${category[0]}] ${title}</a></li>`;
+        // 링크 제목에 yyyy-mm-dd - [category] - 제목 형식으로 추가
+        text += `<li><a href='${link}' target='_blank'>${formattedDate} - [${category}] - ${title}</a></li>`;
     }
 
     text += `</ul></div>`;
