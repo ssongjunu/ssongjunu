@@ -8,7 +8,6 @@ import Parser from "rss-parser";
 let text = `## <p align="center">🚀 About Me</p>
 <p align="center">👩‍💻 Backend Developer</p>
 
-
 ## <p align="center">🛠️ Skills</p>
 <p align="center">
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ssongjunu&layout=compact" />
