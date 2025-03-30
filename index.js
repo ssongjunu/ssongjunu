@@ -72,6 +72,5 @@ const parser = new Parser({
     writeFileSync('README.md', text, 'utf8', (e) => {
         console.log(e);
     })
-    
     console.log('업데이트 완료');
 })();
