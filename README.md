@@ -3,7 +3,7 @@
 
 ## <p align="center">🛠️ Skills</p>
 <p align="center">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ssongjunu&layout=compact" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=ssongjunu&layout=compact" />
 </p>
 
 <p align="center"> 
